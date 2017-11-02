@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace NetCorePal.HealthCheck
 {
+    /// <summary>
+    /// 健康检查接口
+    /// </summary>
     public interface IHealthChecker
     {
         /// <summary>
@@ -10,12 +13,8 @@ namespace NetCorePal.HealthCheck
         /// </summary>
         string Name { get; }
         /// <summary>
-        /// 描述
+        /// 检查
         /// </summary>
-        string Description { get; }
-        /// <summary>
-        /// 检查方法
-        /// </summary>
-        Task<IHealthCheckResult> CheckAsync();
+        Task<HealthCheckResult> CheckAsync();
     }
 }

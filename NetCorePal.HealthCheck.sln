@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck", "NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj", "{729C4E31-F3E8-42E1-BA4C-4C29D8416622}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck", "NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj", "{729C4E31-F3E8-42E1-BA4C-4C29D8416622}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{93F7BBFC-6A3C-4BA6-93BF-B1C307140F01}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Test", "NetCorePal.HealthCheck.Test\NetCorePal.HealthCheck.Test.csproj", "{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Web", "NetCorePal.HealthCheck.Web\NetCorePal.HealthCheck.Web.csproj", "{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +24,19 @@ Global
 		{729C4E31-F3E8-42E1-BA4C-4C29D8416622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{729C4E31-F3E8-42E1-BA4C-4C29D8416622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{729C4E31-F3E8-42E1-BA4C-4C29D8416622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {117AA9EF-C635-450D-ABA5-2ABC3AD4F47C}
 	EndGlobalSection
 EndGlobal
