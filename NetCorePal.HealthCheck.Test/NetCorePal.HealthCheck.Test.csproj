@@ -11,7 +11,12 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
-
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="MySql.Data" Version="6.9.10" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="MySql.Data" Version="6.10.4" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
   </ItemGroup>

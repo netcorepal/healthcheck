@@ -28,7 +28,7 @@ namespace NetCorePal.HealthCheck
                 {
                     continue;
                 }
-                manager.RegisterChecker(new DbConnectionHealthChecker(con.Name, con.ConnectionString, con.ProviderName));
+                manager.Add(new DbConnectionHealthChecker(con.Name, con.ConnectionString, con.ProviderName));
             }
         }
 #endif
@@ -41,7 +41,7 @@ namespace NetCorePal.HealthCheck
         /// <param name="connectionString"></param>
         public static void RegisterDbConnectionHealthChecker(this HealthCheckerManager manager, string name, DbProviderFactory factory, string connectionString)
         {
-            manager.RegisterChecker(new DbConnectionHealthChecker(name, factory, connectionString));
+            manager.Add(new DbConnectionHealthChecker(name, factory, connectionString));
         }
     }
 }

@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
     /// 健康检查管理器
     /// </summary>
-    public class HealthCheckerManager
+    public class HealthCheckerManager : Collection<IHealthChecker>
     {
         /// <summary>
         /// 健康检查管理器实例，该类仅单例模式
@@ -20,18 +21,7 @@ namespace NetCorePal.HealthCheck
 
         private HealthCheckerManager()
         { }
-        private ConcurrentDictionary<string, IHealthChecker> checkers = new ConcurrentDictionary<string, IHealthChecker>();
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="checker"></param>
-        public void RegisterChecker(IHealthChecker checker)
-        {
-            if (!this.checkers.TryAdd(checker.Name, checker))
-            {
-                throw new ArgumentException($"已存在名称为:'{checker.Name}'的checker");
-            }
-        }
+        //private ConcurrentDictionary<string, IHealthChecker> checkers = new ConcurrentDictionary<string, IHealthChecker>();
 
 
         /// <summary>
@@ -40,17 +30,11 @@ namespace NetCorePal.HealthCheck
         /// <returns></returns>
         public async Task<HealthCheckResult[]> CheckAllAsync()
         {
-            var r = await Task.WhenAll(checkers.Values.Select(p =>
+            var r = await Task.WhenAll(this.Select(p =>
             {
-                var task = DoCheck(p);
-                if (task.Status == TaskStatus.WaitingForActivation)
-                {
-                    task.Start();
-                }
-                return task;
+                return DoCheck(p);
             }
             ));
-
             return r;
         }
 
