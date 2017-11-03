@@ -23,14 +23,14 @@ namespace NetCorePal.HealthCheck.Test
         {
             var manager = HealthCheckerManager.Manager;
             manager.Clear();
-            manager.RegisterAllDbConnectionHealthCheckers(false);
+            manager.AddAllDbConnectionHealthCheckers(false);
             Assert.AreEqual(2, manager.Count);
 
             Assert.AreEqual("LocalSqlServer", manager[0].Name);
             Assert.AreEqual("testdb", manager[1].Name);
 
             manager.Clear();
-            manager.RegisterAllDbConnectionHealthCheckers();
+            manager.AddAllDbConnectionHealthCheckers();
             Assert.AreEqual(1, manager.Count);
             Assert.AreEqual("testdb", manager[0].Name);
 
@@ -51,7 +51,7 @@ namespace NetCorePal.HealthCheck.Test
             var manager = HealthCheckerManager.Manager;
             manager.Clear();
 
-            manager.RegisterDbConnectionHealthChecker("DB", new MySql.Data.MySqlClient.MySqlClientFactory(), DbConnectionHealthCheckerTest.connectionString);
+            manager.AddDbConnectionHealthChecker("DB", new MySql.Data.MySqlClient.MySqlClientFactory(), DbConnectionHealthCheckerTest.connectionString);
             Assert.AreEqual(1, manager.Count);
             Assert.AreEqual("DB", manager[0].Name);
             var r = manager.CheckAllAsync().Result;
