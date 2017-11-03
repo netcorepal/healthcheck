@@ -21,13 +21,12 @@ namespace NetCorePal.HealthCheck
 
         private HealthCheckerManager()
         { }
-        //private ConcurrentDictionary<string, IHealthChecker> checkers = new ConcurrentDictionary<string, IHealthChecker>();
 
 
         /// <summary>
-        /// 
+        /// 调用所有检查器检查状态并返回
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回所有检查结果</returns>
         public async Task<HealthCheckResult[]> CheckAllAsync()
         {
             var r = await Task.WhenAll(this.Select(p =>

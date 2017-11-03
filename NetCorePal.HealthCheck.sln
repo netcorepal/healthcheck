@@ -14,7 +14,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.Web", "NetCorePal.HealthCheck.Web\NetCorePal.HealthCheck.Web.csproj", "{D2C1AF24-5253-4ABA-B5B0-8E9B2522E27B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.AspNetCore", "NetCorePal.HealthCheck.AspNetCore\NetCorePal.HealthCheck.AspNetCore.csproj", "{EB5BF31F-4506-4350-B461-4B6C03FE56D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.AspNetCore", "NetCorePal.HealthCheck.AspNetCore\NetCorePal.HealthCheck.AspNetCore.csproj", "{EB5BF31F-4506-4350-B461-4B6C03FE56D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Web.Test", "NetCorePal.HealthCheck.Web.Test\NetCorePal.HealthCheck.Web.Test.csproj", "{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.AspNetCore.Test", "NetCorePal.HealthCheck.AspNetCore.Test\NetCorePal.HealthCheck.AspNetCore.Test.csproj", "{1AE5AF72-E5CE-46B3-B41D-1F603A89C385}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{95521A18-F7D5-424A-BCFD-CE3A331D06F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +44,22 @@ Global
 		{EB5BF31F-4506-4350-B461-4B6C03FE56D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5BF31F-4506-4350-B461-4B6C03FE56D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5BF31F-4506-4350-B461-4B6C03FE56D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4201B6BF-3D2C-4B6F-B948-A1CD1AE24C12} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
+		{28B0DC13-3019-4CF8-9ECC-DA65538ADCA0} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
+		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {117AA9EF-C635-450D-ABA5-2ABC3AD4F47C}
