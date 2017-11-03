@@ -70,7 +70,7 @@ using NetCorePal.HealthCheck;
 
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    app.UseHealthCheck(url: "healthcheck", apiKey: "yourapikey");
+    app.UseHealthCheck(url: "/healthcheck", apiKey: "yourapikey");
     //your own code...
 }
 ```
