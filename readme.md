@@ -66,6 +66,8 @@ For asp.net core
 ```
 Startup.cs
 
+using NetCorePal.HealthCheck;
+
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     app.UseHealthCheck(url: "healthcheck", apiKey: "yourapikey");
