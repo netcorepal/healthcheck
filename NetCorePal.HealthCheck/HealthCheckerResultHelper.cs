@@ -12,8 +12,7 @@ namespace NetCorePal.HealthCheck
     {
         public static string ToHtml(this HealthCheckResult[] results)
         {
-            var tempHtml = @"
-<!DOCTYPE html>
+            var tempHtml = @"<!DOCTYPE html>
 <html>
 <head>
 	<title>健康检查结果</title>
