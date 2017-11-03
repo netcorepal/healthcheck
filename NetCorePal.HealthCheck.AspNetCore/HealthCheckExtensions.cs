@@ -35,7 +35,7 @@ namespace NetCorePal.HealthCheck
                     }
                     else
                     {
-                        //如果不是本地ip，则禁止请求
+                        //TODO 如果不是本地ip，则禁止请求
                     }
 
                     if (badVisitor)
