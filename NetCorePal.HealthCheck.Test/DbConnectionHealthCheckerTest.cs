@@ -5,9 +5,9 @@ namespace NetCorePal.HealthCheck.Test
     [TestClass]
     public class DbConnectionHealthCheckerTest
     {
-        const string connectionString = "server=localhost;user id=root;password=123456;";
+        internal const string connectionString = "server=localhost;user id=root;password=123456;";
         [TestMethod]
-        public void CheckAsync_Test()
+        public void DbConnectionHealth_CheckAsync_Test()
         {
             var checker = new DbConnectionHealthChecker("n1", new MySql.Data.MySqlClient.MySqlClientFactory(), connectionString);
 
@@ -20,7 +20,7 @@ namespace NetCorePal.HealthCheck.Test
         }
 #if NET45
         [TestMethod]
-        public void CheckAsync_Test_Net45()
+        public void DbConnectionHealth_CheckAsync_Test_Net45()
         {
             var checker = new DbConnectionHealthChecker("n1", "MySql.Data.MySqlClient", connectionString);
             var r = checker.CheckAsync().Result;

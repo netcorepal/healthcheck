@@ -28,7 +28,7 @@ namespace NetCorePal.HealthCheck
                 {
                     continue;
                 }
-                manager.Add(new DbConnectionHealthChecker(con.Name, con.ConnectionString, con.ProviderName));
+                manager.Add(new DbConnectionHealthChecker(con.Name, con.ProviderName, con.ConnectionString));
             }
         }
 #endif

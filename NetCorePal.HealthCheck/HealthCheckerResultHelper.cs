@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 [assembly:System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Web")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.AspNetCore")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Test")]
 namespace NetCorePal.HealthCheck
 {
     static class HealthCheckerResultHelper
@@ -38,7 +39,7 @@ namespace NetCorePal.HealthCheck
             <tbody>
 	            <tr>
 	                <th width='20%'><span>名称</span></th>
-	                <th width='15%'><span>是否成功</span></th>
+	                <th width='15%'><span>是否健康</span></th>
 	                <th width='15%'><span>响应时间(毫秒)</span></th>
 	                <th width='25%'><span>信息</span></th>
 	            </tr>
