@@ -4,7 +4,7 @@ Health check tool for .net and .net core
 
 ## Install
 
-To install SchoolPal.Toolkit.Pinyins from the Package Manager Console, run the following command:
+To install NetCorePal.HealthCheck from the Package Manager Console, run the following command:
 ```
 Install-Package NetCorePal.HealthCheck
 ```
