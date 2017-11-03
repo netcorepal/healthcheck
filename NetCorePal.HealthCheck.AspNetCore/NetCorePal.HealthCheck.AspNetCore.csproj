@@ -1,36 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>NetCorePal.HealthCheck</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>netcorepal</Authors>
     <Company>netcorepal</Company>
+    <Description>Health check result output for asp.net core web project</Description>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>netcorepal healthcheck asp.net mvc</PackageTags>
-    <Description>Health check result output for web project</Description>
+    <PackageTags>netcorepal healthcheck asp.net core mvc</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net45\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard2.0\NetCorePal.HealthCheck.AspNetCore.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net45\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.HealthCheck.AspNetCore.xml</DocumentationFile>
   </PropertyGroup>
 
-  
-  
   <ItemGroup>
-    <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.0" />
   </ItemGroup>
 
-
   <ItemGroup>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Routing" />
+    <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
   </ItemGroup>
 
 </Project>

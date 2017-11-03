@@ -11,6 +11,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <PackageTags>netcorepal healthcheck</PackageTags>
+    <Description>Health check tool for .net and .net core</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">

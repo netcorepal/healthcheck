@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+[assembly:System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Web")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.AspNetCore")]
 namespace NetCorePal.HealthCheck
 {
     static class HealthCheckerResultHelper
