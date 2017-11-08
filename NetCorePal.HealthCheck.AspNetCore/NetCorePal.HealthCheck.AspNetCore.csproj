@@ -6,7 +6,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>netcorepal</Authors>
     <Company>netcorepal</Company>
-    <Description>Health check result output for asp.net core web project</Description>
+    <Description>Health check result output for ASP.NET Core web project.
+For .NET Framework 4.5+, please use NetCorePal.HealthCheck.Web</Description>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <PackageTags>netcorepal healthcheck asp.net core mvc</PackageTags>

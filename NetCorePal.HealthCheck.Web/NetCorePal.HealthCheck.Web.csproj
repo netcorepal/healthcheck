@@ -10,7 +10,8 @@
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>netcorepal healthcheck asp.net mvc</PackageTags>
-    <Description>Health check result output for web project</Description>
+    <Description>Health check result output for web project .NET Framework 4.5+.
+For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
