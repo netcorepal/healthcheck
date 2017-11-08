@@ -35,7 +35,11 @@ namespace NetCorePal.HealthCheck
                     }
                     else
                     {
-                        //TODO 如果不是本地ip，则禁止请求
+                        //如果不是本地ip，则禁止请求
+                        if (!context.Request.IsLocal())
+                        {
+                            badVisitor = true;
+                        }
                     }
 
                     if (badVisitor)
@@ -49,6 +53,7 @@ namespace NetCorePal.HealthCheck
                     {
                         context.Response.StatusCode = 500;
                     }
+                    context.Response.ContentType = "text/html; charset=utf-8";
                     await context.Response.WriteAsync(r.ToHtml());
                 });
 
