@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCorePal.HealthCheck;
-namespace HetCoreWeb
+namespace NetCoreWeb
 {
     public class Startup
     {

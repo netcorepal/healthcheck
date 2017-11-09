@@ -1,6 +1,6 @@
 using System;
 
-namespace HetCoreWeb.Models
+namespace NetCoreWeb.Models
 {
     public class ErrorViewModel
     {
