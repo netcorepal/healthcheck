@@ -12,6 +12,8 @@
     <PackageTags>netcorepal healthcheck asp.net mvc</PackageTags>
     <Description>Health check result output for web project .NET Framework 4.5+.
 For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Use HTTP 401 instead HTTP 404 when apiKey was wrong</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

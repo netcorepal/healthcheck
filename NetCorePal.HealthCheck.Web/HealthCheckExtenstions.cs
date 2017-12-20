@@ -79,7 +79,7 @@ namespace NetCorePal.HealthCheck
 
             if (badVisitor)
             {
-                context.Response.StatusCode = 404;
+                context.Response.StatusCode = 401;
                 return;
             }
 
