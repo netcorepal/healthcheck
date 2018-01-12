@@ -1,4 +1,4 @@
-﻿# NetCorePal.HealthCheck
+# NetCorePal.HealthCheck
 
 Health check tool for .net and .net core
 
@@ -58,6 +58,32 @@ protected void Application_Start()
 {
     //Your own code....
     RouteTable.Routes.UseHealthCheck(url: "healthcheck", apiKey: "yourapikey");
+}
+```
+
+For asp.net or asp.net web api
+```
+Global.asax.cs
+
+using NetCorePal.HealthCheck;
+
+protected void Application_Start()
+{
+    //Your own code....
+    GlobalConfiguration.Configuration.UseHealthCheck(url: "healthcheck", apiKey: "yourapikey");
+}
+```
+
+For asp.net or asp.net owin web
+```
+Startup.cs
+
+using NetCorePal.HealthCheck;
+
+public void Configuration(IAppBuilder app)
+{
+    //Your own code....
+     app.UseHealthCheck(url: "healthcheck", apiKey: "yourapikey");
 }
 ```
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Web")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.WebApi")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Owin")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.AspNetCore")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NetCorePal.HealthCheck.Test")]
 namespace NetCorePal.HealthCheck

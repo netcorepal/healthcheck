@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck", "NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj", "{729C4E31-F3E8-42E1-BA4C-4C29D8416622}"
 EndProject
@@ -24,7 +24,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{95521A18
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45Web", "Net45Web\Net45Web.csproj", "{CC2BD31B-282C-4930-A47A-DFA6C5CC6DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreWeb", "NetCoreWeb\NetCoreWeb.csproj", "{3B48E833-8B05-4918-A648-5161869ECAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreWeb", "NetCoreWeb\NetCoreWeb.csproj", "{3B48E833-8B05-4918-A648-5161869ECAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.WebApi", "NetCorePal.HealthCheck.WebApi\NetCorePal.HealthCheck.WebApi.csproj", "{78A92127-6155-4F53-9F48-5929308EDBD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Owin", "NetCorePal.HealthCheck.Owin\NetCorePal.HealthCheck.Owin.csproj", "{F684E73D-400C-4A3E-BF94-E8B82644532F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45Owin", "Net45Owin\Net45Owin.csproj", "{4C26024D-F14D-4375-985E-948ED67F6B10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45WebApi", "Net45WebApi\Net45WebApi.csproj", "{FA728183-8C57-4C16-BFA9-DACECFDC0897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +72,22 @@ Global
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +98,8 @@ Global
 		{1AE5AF72-E5CE-46B3-B41D-1F603A89C385} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
 		{CC2BD31B-282C-4930-A47A-DFA6C5CC6DD5} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
 		{3B48E833-8B05-4918-A648-5161869ECAE3} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
+		{4C26024D-F14D-4375-985E-948ED67F6B10} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897} = {95521A18-F7D5-424A-BCFD-CE3A331D06F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {117AA9EF-C635-450D-ABA5-2ABC3AD4F47C}
