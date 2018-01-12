@@ -14,6 +14,17 @@ For asp.net or asp.net mvc
 Install-Package NetCorePal.HealthCheck.Web
 ```
 
+For asp.net or asp.net web api 
+```
+Install-Package NetCorePal.HealthCheck.WebApi
+```
+
+For asp.net or asp.net owin web
+```
+Install-Package NetCorePal.HealthCheck.Owin
+```
+
+
 For asp.net core
 ```
 Install-Package NetCorePal.HealthCheck.AspNetCore
