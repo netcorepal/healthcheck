@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>netcorepal</Authors>
     <Description>RabbitMQ health checker using RabbitMQ.Client</Description>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>

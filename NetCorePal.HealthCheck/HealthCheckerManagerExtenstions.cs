@@ -56,7 +56,7 @@ namespace NetCorePal.HealthCheck
         }
 
         /// <summary>
-        /// 添加健康检查器
+        /// add checker
         /// </summary>
         /// <param name="manager">instance of HealthCheckerManager</param>
         /// <param name="name">checker name</param>
@@ -67,7 +67,7 @@ namespace NetCorePal.HealthCheck
         }
 
         /// <summary>
-        /// 添加健康检查器
+        /// add checker
         /// </summary>
         /// <param name="manager">instance of HealthCheckerManager</param>
         /// <param name="name">checker name</param>
@@ -75,6 +75,16 @@ namespace NetCorePal.HealthCheck
         public static void Add(this HealthCheckerManager manager, string name, Func<HealthCheckResult> func)
         {
             manager.Add(new DelegateHealthChecker { Name = name, Func = func });
+        }
+        /// <summary>
+        /// add <see cref="HttpHealthChecker"/>  
+        /// </summary>
+        /// <param name="manager">instance of HealthCheckerManager</param>
+        /// <param name="name">checker name</param>
+        /// <param name="url">http url to check</param>
+        public static void AddHttpHealthChecker(this HealthCheckerManager manager, string name, string url)
+        {
+            manager.Add(new HttpHealthChecker(name, url));
         }
     }
 }

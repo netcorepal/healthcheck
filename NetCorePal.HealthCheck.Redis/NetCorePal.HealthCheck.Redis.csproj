@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>netcorepal healthcheck redis stackexchange</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">

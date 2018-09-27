@@ -11,7 +11,7 @@ For .NET Framework 4.5+, please use NetCorePal.HealthCheck.Web</Description>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <PackageTags>netcorepal healthcheck asp.net core mvc</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <PackageReleaseNotes>Use HTTP 401 instead HTTP 404 when apiKey was wrong</PackageReleaseNotes>
   </PropertyGroup>
 

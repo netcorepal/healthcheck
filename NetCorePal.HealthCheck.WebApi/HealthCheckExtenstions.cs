@@ -61,7 +61,7 @@ namespace NetCorePal.HealthCheck
             {
                 this.apiKey = apiKey;
             }
-            protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
                 HttpResponseMessage responseMessage = new HttpResponseMessage();
                 bool badVisitor = false;
@@ -98,8 +98,7 @@ namespace NetCorePal.HealthCheck
                         CharSet = "utf-8"
                     };
                 }
-
-                return responseMessage;
+                return Task.FromResult(responseMessage);
             }
         }
     }

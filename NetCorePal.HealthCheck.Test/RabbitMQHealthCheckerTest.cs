@@ -15,9 +15,7 @@ namespace NetCorePal.HealthCheck.Test
         [TestMethod]
         public void CheckAsync_OK_Test()
         {
-            var connectionFactory = new ConnectionFactory();    //use localhost:5672: guest guest
-
-            var checker = new RabbitMQHealthChecker("MQ", connectionFactory);
+            var checker = new RabbitMQHealthChecker("MQ", new ConnectionFactory());            //use localhost:5672: guest guest
             var r = checker.CheckAsync().Result;
             Assert.IsNull(r);
         }
@@ -26,9 +24,11 @@ namespace NetCorePal.HealthCheck.Test
         [TestMethod]
         public void CheckAsync_Dead_Test()
         {
-            ConnectionFactory connectionFactory = new ConnectionFactory();
-            connectionFactory.HostName = "";
-            connectionFactory.Port = 123;
+            ConnectionFactory connectionFactory = new ConnectionFactory
+            {
+                HostName = "",
+                Port = 123
+            };
             var checker = new RabbitMQHealthChecker("MQ", connectionFactory);
 
             Assert.ThrowsException<AggregateException>(() => checker.CheckAsync().Result);
