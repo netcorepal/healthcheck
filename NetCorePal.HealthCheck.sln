@@ -26,17 +26,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45Web", "Net45Web\Net45W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreWeb", "NetCoreWeb\NetCoreWeb.csproj", "{3B48E833-8B05-4918-A648-5161869ECAE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.WebApi", "NetCorePal.HealthCheck.WebApi\NetCorePal.HealthCheck.WebApi.csproj", "{78A92127-6155-4F53-9F48-5929308EDBD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.WebApi", "NetCorePal.HealthCheck.WebApi\NetCorePal.HealthCheck.WebApi.csproj", "{78A92127-6155-4F53-9F48-5929308EDBD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Owin", "NetCorePal.HealthCheck.Owin\NetCorePal.HealthCheck.Owin.csproj", "{F684E73D-400C-4A3E-BF94-E8B82644532F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.Owin", "NetCorePal.HealthCheck.Owin\NetCorePal.HealthCheck.Owin.csproj", "{F684E73D-400C-4A3E-BF94-E8B82644532F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45Owin", "Net45Owin\Net45Owin.csproj", "{4C26024D-F14D-4375-985E-948ED67F6B10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45WebApi", "Net45WebApi\Net45WebApi.csproj", "{FA728183-8C57-4C16-BFA9-DACECFDC0897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Redis", "NetCorePal.HealthCheck.Redis\NetCorePal.HealthCheck.Redis.csproj", "{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.Redis", "NetCorePal.HealthCheck.Redis\NetCorePal.HealthCheck.Redis.csproj", "{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.RabbitMQ", "NetCorePal.HealthCheck.RabbitMQ\NetCorePal.HealthCheck.RabbitMQ.csproj", "{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.RabbitMQ", "NetCorePal.HealthCheck.RabbitMQ\NetCorePal.HealthCheck.RabbitMQ.csproj", "{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +76,30 @@ Global
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A92127-6155-4F53-9F48-5929308EDBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F684E73D-400C-4A3E-BF94-E8B82644532F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C26024D-F14D-4375-985E-948ED67F6B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA728183-8C57-4C16-BFA9-DACECFDC0897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

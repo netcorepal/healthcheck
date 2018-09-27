@@ -12,11 +12,11 @@ namespace NetCorePal.HealthCheck
     public static class HealthCheckExtenstions
     {
         /// <summary>
-        /// 注册HealthCheck路由
+        /// Add HealthCheck Route
         /// </summary>
-        /// <param name="app">Owin 配置</param>
-        /// <param name="url">路由地址，默认值“healthcheck”,不要以“/”开头</param>
-        /// <param name="apiKey">访问该接口的apiKey，如果不设置，则仅限本机访问，非法访问都将得到404错误</param>
+        /// <param name="app">IAppBuilder</param>
+        /// <param name="url">Route，default “healthcheck”,do not use "/" start</param>
+        /// <param name="apiKey">apiKey，all local if null, return http code 401 if apikey wrong</param>
         public static void UseHealthCheck(this IAppBuilder app, string url = "healthcheck", string apiKey = null)
         {
             if (string.IsNullOrEmpty(url))
