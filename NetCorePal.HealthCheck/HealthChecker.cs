@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
-    /// 
+    /// HealthChecker Base Class
     /// </summary>
     public class HealthChecker : IHealthChecker
     {
         /// <summary>
-        /// 
+        /// Checker Name
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Do Check Async
         /// </summary>
         /// <returns></returns>
         public virtual async Task<HealthCheckResult> CheckAsync()
@@ -25,9 +25,9 @@ namespace NetCorePal.HealthCheck
         }
 
         /// <summary>
-        /// 
+        /// Do nothing
         /// </summary>
-        /// <returns></returns>
+        /// <returns>always null</returns>
         protected virtual HealthCheckResult Check()
         {
             return null;

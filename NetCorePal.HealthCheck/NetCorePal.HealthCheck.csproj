@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Company>netcorepal</Company>
     <Authors>netcorepal</Authors>
-    <PackageReleaseNotes />
+    <PackageReleaseNotes>添加IDbConnection的支持</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>

@@ -24,7 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{95521A18
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net45Web", "Net45Web\Net45Web.csproj", "{CC2BD31B-282C-4930-A47A-DFA6C5CC6DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreWeb", "NetCoreWeb\NetCoreWeb.csproj", "{3B48E833-8B05-4918-A648-5161869ECAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreWeb", "NetCoreWeb\NetCoreWeb.csproj", "{3B48E833-8B05-4918-A648-5161869ECAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.Redis", "NetCorePal.HealthCheck.Redis\NetCorePal.HealthCheck.Redis.csproj", "{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.HealthCheck.RabbitMQ", "NetCorePal.HealthCheck.RabbitMQ\NetCorePal.HealthCheck.RabbitMQ.csproj", "{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +68,14 @@ Global
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B48E833-8B05-4918-A648-5161869ECAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F95F4C-0AA2-44DD-94B0-C60882F605D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA69DDD-7BCD-440B-B0D3-2500A7C20F7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

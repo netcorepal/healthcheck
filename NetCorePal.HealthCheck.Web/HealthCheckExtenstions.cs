@@ -35,7 +35,7 @@ namespace NetCorePal.HealthCheck
 
     class HealthCheckRouteHandler : IRouteHandler
     {
-        AgentHttpHandler hander;
+        readonly AgentHttpHandler hander;
         public HealthCheckRouteHandler(string apiKey)
         {
             this.hander = new AgentHttpHandler(apiKey);

@@ -10,12 +10,12 @@ using System.Collections.ObjectModel;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
-    /// 健康检查管理器
+    /// checker manager
     /// </summary>
     public class HealthCheckerManager : Collection<IHealthChecker>
     {
         /// <summary>
-        /// 健康检查管理器实例，该类仅单例模式
+        /// current manager
         /// </summary>
         public static HealthCheckerManager Manager { get; private set; } = new HealthCheckerManager();
 
@@ -24,9 +24,9 @@ namespace NetCorePal.HealthCheck
 
 
         /// <summary>
-        /// 调用所有检查器检查状态并返回
+        /// check all checker
         /// </summary>
-        /// <returns>返回所有检查结果</returns>
+        /// <returns></returns>
         public async Task<HealthCheckResult[]> CheckAllAsync()
         {
             var r = await Task.WhenAll(this.Select(p =>

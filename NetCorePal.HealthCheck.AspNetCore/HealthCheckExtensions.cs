@@ -16,9 +16,9 @@ namespace NetCorePal.HealthCheck
         /// <summary>
         /// 注册HealthCheck中间件到指定url
         /// </summary>
-        /// <param name="app">IApplicationBuilder实例</param>
-        /// <param name="url">路由地址，默认值“/healthcheck”</param>
-        /// <param name="apiKey">访问该接口的apiKey，如果不设置，则仅限本机访问，非法访问都将得到404错误</param>
+        /// <param name="app">IApplicationBuilder</param>
+        /// <param name="url">Route，default:“/healthcheck”</param>
+        /// <param name="apiKey">apiKey，all local if null, return http code 401 if apikey wrong</param>
         public static void UseHealthCheck(this IApplicationBuilder app, string url = "/healthcheck", string apiKey = null)
         {
             app.Map(url, p =>

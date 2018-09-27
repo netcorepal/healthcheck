@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
+    <Authors>netcorepal</Authors>
+    <Description>RabbitMQ health checker using RabbitMQ.Client</Description>
+    <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>netcorepal healthcheck rabbitmq</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\NetCorePal.HealthCheck.RabbitMQ.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.HealthCheck.RabbitMQ.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="4.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
+  </ItemGroup>
+</Project>

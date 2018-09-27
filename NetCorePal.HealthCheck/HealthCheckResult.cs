@@ -3,29 +3,29 @@
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
-    /// 健康检查
+    /// Check Result
     /// </summary>
     public class HealthCheckResult
     {
         /// <summary>
-        /// 检查器名称
+        /// checker name
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// 是否健康
+        /// is healthy or not
         /// </summary>
         public bool IsHealthy { get; set; }
         /// <summary>
-        /// 信息
+        /// message
         /// </summary>
         public string Message { get; set; }
         /// <summary>
-        /// 异常信息
+        /// exception
         /// </summary>
         public Exception Exception { get; set; }
 
         /// <summary>
-        /// 检查耗时,单位毫秒
+        /// check elapsed by milliseconds 
         /// </summary>
         public long Elapsed { get; set; }
     }

@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netcoreapp2.0</TargetFrameworks>
-
+    <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -12,12 +11,15 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Compile Remove="RabbitMQHealthCheckerTest.cs" />
     <PackageReference Include="MySql.Data" Version="6.9.10" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <ProjectReference Include="..\NetCorePal.HealthCheck.RabbitMQ\NetCorePal.HealthCheck.RabbitMQ.csproj" />
     <PackageReference Include="MySql.Data" Version="6.10.4" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetCorePal.HealthCheck.Redis\NetCorePal.HealthCheck.Redis.csproj" />
     <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
   </ItemGroup>
 
