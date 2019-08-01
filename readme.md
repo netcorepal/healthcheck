@@ -31,6 +31,12 @@ Install-Package NetCorePal.HealthCheck.AspNetCore
 ```
 
 
+
+For asp.net with SchoolPal.Toolkit.Configuration.DatabaseClusters.DatabaseClusterSection
+```
+Install-Package NetCorePal.HealthCheck.DbCluster
+```
+
 ## How to use
 
 
@@ -41,6 +47,10 @@ using NetCorePal.HealthCheck；
 HealthCheckerManager.Manager.Add(new YourChecker()); //add your own checker
 
 HealthCheckerManager.Manager.AddAllDbConnectionHealthCheckers(); //add all connectionstring in web.config （.NET Framework 4.5+）
+
+HealthCheckerManager.Manager.AddDbClusterHealthChecker();						//	add Custom Section with default name of DbCluster;
+HealthCheckerManager.Manager.AddDbClusterHealthChecker("your_custom_name");		//	or your custom name;
+
 
 HealthCheckerManager.Manager.Add("mycheckerName",()=>{ 
 //you own check code
