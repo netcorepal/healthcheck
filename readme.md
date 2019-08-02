@@ -47,6 +47,8 @@ HealthCheckerManager.Manager.Add("mycheckerName",()=>{
     return new HealthCheckResult(){}; //add func as a checker
 
 }); 
+
+HealthCheckerManager.Manager.AddHttpHeadHealthChecker("checkername", "url");
 ```
 
 #### How to get check result
