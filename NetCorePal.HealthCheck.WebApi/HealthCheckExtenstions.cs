@@ -86,7 +86,18 @@ namespace NetCorePal.HealthCheck
                 }
                 else
                 {
-                    var r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+
+                    HealthCheckResult[] r;
+                    if ("HEAD".Equals(request.Method.Method, System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        responseMessage.StatusCode = System.Net.HttpStatusCode.OK;
+                        responseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
+                        return Task.FromResult(responseMessage);
+                    }
+                    else
+                    {
+                        r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+                    }
                     var html = r.ToHtml();
                     if (r.Any(p => !p.IsHealthy))
                     {
