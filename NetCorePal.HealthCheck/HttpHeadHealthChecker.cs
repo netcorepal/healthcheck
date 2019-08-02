@@ -9,7 +9,7 @@ using System.Net.Http;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
-    /// HttpHealthChecker
+    /// HttpHeadHealthChecker
     /// </summary>
     public class HttpHeadHealthChecker : IHealthChecker
     {
@@ -17,7 +17,7 @@ namespace NetCorePal.HealthCheck
 
         readonly HttpClient client;
         /// <summary>
-        /// 
+        /// 接入方需要支持head请求
         /// </summary>
         /// <param name="name">checker name</param>
         /// <param name="url">http url to check</param>
