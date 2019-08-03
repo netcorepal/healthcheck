@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="..\build\version.props"></Import>
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <RootNamespace>NetCorePal.HealthCheck</RootNamespace>
@@ -12,8 +12,7 @@
     <PackageTags>netcorepal healthcheck asp.net owin</PackageTags>
     <Description>Health check result output for owin web project .NET Framework 4.5+.
 For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
-    <Version>1.1.1</Version>
-    <PackageReleaseNotes>Use HTTP 401 instead HTTP 404 when apiKey was wrong</PackageReleaseNotes>
+    <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

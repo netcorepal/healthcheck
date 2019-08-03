@@ -48,7 +48,16 @@ namespace NetCorePal.HealthCheck
                         return;
                     }
 
-                    var r = await HealthCheckerManager.Manager.CheckAllAsync();
+                    HealthCheckResult[] r;
+                    if (HttpMethods.Head.Equals(context.Request.Method, System.StringComparison.OrdinalIgnoreCase))
+                    {                       
+                        return;
+                    }
+                    else
+                    {
+                        r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+                    }
+
                     if (r.Any(c => !c.IsHealthy))
                     {
                         context.Response.StatusCode = 500;

@@ -1,6 +1,6 @@
-﻿using System.Web;
+﻿using System.Linq;
+using System.Web;
 using System.Web.Routing;
-using System.Linq;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
@@ -83,8 +83,17 @@ namespace NetCorePal.HealthCheck
                 return;
             }
 
+            HealthCheckResult[] r;
+            if ("HEAD".Equals(context.Request.HttpMethod, System.StringComparison.OrdinalIgnoreCase))
+            {
+                context.Response.Flush();
+                return;
+            }
+            else
+            {
+                r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+            }
 
-            var r = HealthCheckerManager.Manager.CheckAllAsync().Result;
             var html = r.ToHtml();
             if (r.Any(p => !p.IsHealthy))
             {

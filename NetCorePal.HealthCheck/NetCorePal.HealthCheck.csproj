@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="..\build\version.props"></Import>
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.1.1</Version>
     <Company>netcorepal</Company>
     <Authors>netcorepal</Authors>
-    <PackageReleaseNotes>添加IDbConnection的支持</PackageReleaseNotes>
+    <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>

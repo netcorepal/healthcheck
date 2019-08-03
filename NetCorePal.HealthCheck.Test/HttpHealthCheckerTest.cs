@@ -36,5 +36,15 @@ namespace NetCorePal.HealthCheck.Test
             Assert.AreEqual("mycheker", checker.Name);
             Assert.ThrowsException<AggregateException>(() => checker.CheckAsync().Result);
         }
+
+
+        [TestMethod]
+        public void CheckAsync_Head_Method_Test()
+        {
+            var checker = new HttpHeadHealthChecker("myheadcheker", "https://github.com/thepage/4/0/4");
+
+            Assert.AreEqual("myheadcheker", checker.Name);
+            Assert.IsNull(checker.CheckAsync().Result);
+        }
     }
 }

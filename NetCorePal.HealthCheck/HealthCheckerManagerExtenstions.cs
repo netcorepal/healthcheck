@@ -86,5 +86,16 @@ namespace NetCorePal.HealthCheck
         {
             manager.Add(new HttpHealthChecker(name, url));
         }
+
+        /// <summary>
+        /// add <see cref="HttpHeadHealthChecker"/>  
+        /// </summary>
+        /// <param name="manager">instance of HealthCheckerManager</param>
+        /// <param name="name">checker name</param>
+        /// <param name="url">http url to check</param>
+        public static void AddHttpHeadHealthChecker(this HealthCheckerManager manager, string name, string url)
+        {
+            manager.Add(new HttpHeadHealthChecker(name, url));
+        }
     }
 }
