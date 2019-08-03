@@ -32,3 +32,9 @@ steps:
     command: 'pack'
     packagesToPack: 'NetCorePal**/*.csproj'
     versioningScheme: 'off'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '6c7398e8-e91b-4ed6-a8a5-31340be55bd7'
