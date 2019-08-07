@@ -91,7 +91,6 @@ namespace NetCorePal.HealthCheck
                     if ("HEAD".Equals(request.Method.Method, System.StringComparison.OrdinalIgnoreCase))
                     {
                         responseMessage.StatusCode = System.Net.HttpStatusCode.OK;
-                        responseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
                         return Task.FromResult(responseMessage);
                     }
                     else

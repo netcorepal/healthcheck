@@ -13,7 +13,7 @@
     <PackageTags>netcorepal healthcheck asp.net web api</PackageTags>
     <Description>Health check result output for web api project .NET Framework 4.5+.
 For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
-    <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
+    <PackageReleaseNotes>no stream in body response while HEAD method</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
