@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>netcorepal</Company>
     <Authors>netcorepal</Authors>
-    <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
+    <PackageReleaseNotes>empty string use default value in provider name of connection string</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
