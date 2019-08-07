@@ -39,7 +39,7 @@ namespace NetCorePal.HealthCheck
         /// <param name="name">Checker name</param>
         /// <param name="provider">providerName，web.config system.data section DbProviderFactories invariant value</param>
         /// <param name="connectionString">连接字符串</param>
-        public DbConnectionHealthChecker(string name, string provider, string connectionString) : this(name, DbProviderFactories.GetFactory(provider ?? "MySql.Data.MySqlClient"), connectionString)
+        public DbConnectionHealthChecker(string name, string provider, string connectionString) : this(name, DbProviderFactories.GetFactory(string.IsNullOrWhiteSpace(provider) ? "MySql.Data.MySqlClient" : provider), connectionString)
         {
             //  FBI WARNING: provider need a defaut driver            
         }
