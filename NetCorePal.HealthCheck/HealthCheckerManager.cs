@@ -29,11 +29,11 @@ namespace NetCorePal.HealthCheck
         /// <returns></returns>
         public async Task<HealthCheckResult[]> CheckAllAsync()
         {
-            var r = await Task.WhenAll(this.Select(p =>
+            var r = await Task.WhenAll(this.Select(async p =>
             {
-                return DoCheck(p);
+                return await DoCheck(p).ConfigureAwait(false);
             }
-            ));
+            )).ConfigureAwait(false);
             return r;
         }
 
