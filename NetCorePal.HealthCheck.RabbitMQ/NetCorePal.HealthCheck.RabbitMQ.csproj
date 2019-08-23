@@ -11,13 +11,6 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>netcorepal healthcheck rabbitmq</PackageTags>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\NetCorePal.HealthCheck.RabbitMQ.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.HealthCheck.RabbitMQ.xml</DocumentationFile>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="4.0.0" />
   </ItemGroup>
