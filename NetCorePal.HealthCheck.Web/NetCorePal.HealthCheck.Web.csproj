@@ -2,7 +2,7 @@
   <Import Project="..\build\version.props"></Import>
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks>net45;net462</TargetFrameworks>
     <RootNamespace>NetCorePal.HealthCheck</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>netcorepal</Authors>
@@ -24,7 +24,13 @@ For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
     <DocumentationFile>bin\Release\net45\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
   </PropertyGroup>
 
-  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net462\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net462\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
+  </PropertyGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />

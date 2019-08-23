@@ -32,7 +32,7 @@ namespace NetCorePal.HealthCheck
         }
 
 
-#if NET45
+#if Framework
         /// <summary>
         /// DbConnectionHealthChecker
         /// </summary>
