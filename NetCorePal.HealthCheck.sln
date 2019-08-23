@@ -40,6 +40,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePal.HealthCheck.Rabb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{47309CD0-1203-4B92-BFA4-D48B49752A51}"
 	ProjectSection(SolutionItems) = preProject
+		build\direct.build.props = build\direct.build.props
 		build\version.props = build\version.props
 	EndProjectSection
 EndProject

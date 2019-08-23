@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\build\version.props"></Import>
+  <Import Project="..\build\direct.build.props"></Import>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>NetCorePal.HealthCheck</RootNamespace>
@@ -12,14 +13,6 @@ For .NET Framework 4.5+, please use NetCorePal.HealthCheck.Web</Description>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>
     <PackageTags>netcorepal healthcheck asp.net core mvc</PackageTags>
     <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\NetCorePal.HealthCheck.AspNetCore.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.HealthCheck.AspNetCore.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

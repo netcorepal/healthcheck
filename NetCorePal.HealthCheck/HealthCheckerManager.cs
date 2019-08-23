@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
-
+#if NET45
+#else
+using Microsoft.Extensions.Logging;
+#endif
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
@@ -18,6 +21,12 @@ namespace NetCorePal.HealthCheck
         /// current manager
         /// </summary>
         public static HealthCheckerManager Manager { get; private set; } = new HealthCheckerManager();
+#if NET45
+#else
+        internal ILogger Logger;
+        int WarnningTimes = 1000; //log warnning if all checker elapsed up on x (ms);
+#endif
+
 
         private HealthCheckerManager()
         { }
@@ -34,6 +43,31 @@ namespace NetCorePal.HealthCheck
                 return await DoCheck(p).ConfigureAwait(false);
             }
             )).ConfigureAwait(false);
+#if NET45
+#else
+            if (this.Logger != null)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var result in r)
+                {
+                    sb.AppendFormat("Name:{0} ,Message:{1}, Elapsed:{2}, IsHealthy:{3} ,ExceptionMessage:{4}, StackTrace:{5}", result.Name, result.Message, result.Elapsed, result.IsHealthy, result.Exception?.Message, result.Exception?.StackTrace);
+                    sb.AppendLine();
+                }
+                if (r.Any(p => !p.IsHealthy))
+                {
+                    Logger.LogError(sb.ToString());
+                }
+                else if (r.Any(p => p.Elapsed > WarnningTimes))
+                {
+                    Logger.LogWarning(sb.ToString());
+                }
+                else
+                {
+                    Logger.LogInformation(sb.ToString());
+                }
+            }
+#endif
             return r;
         }
 
