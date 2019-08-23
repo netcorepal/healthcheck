@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\build\version.props"></Import>
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net45;net462;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>netcorepal</Company>
     <Authors>netcorepal</Authors>
@@ -28,9 +28,38 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard2.0\NetCorePal.HealthCheck.xml</DocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net462|AnyCPU'">
+    <DocumentationFile>bin\Debug\net462\NetCorePal.HealthCheck.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
+    <DocumentationFile>bin\Release\net462\NetCorePal.HealthCheck.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net45'">
+    <DefineConstants>Framework</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net462'">
+    <DefineConstants>Framework</DefineConstants>
+  </PropertyGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>2.0.0</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
