@@ -99,6 +99,7 @@ namespace NetCorePal.HealthCheck
             {
                 context.Response.StatusCode = 500;
             }
+            context.Response.TrySkipIisCustomErrors = true;
             context.Response.Write(html);
         }
     }
