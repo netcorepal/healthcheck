@@ -13,7 +13,7 @@
     <PackageTags>netcorepal healthcheck asp.net mvc</PackageTags>
     <Description>Health check result output for web project .NET Framework 4.5+.
 For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
-    <PackageReleaseNotes>support http HEAD Method</PackageReleaseNotes>
+    <PackageReleaseNotes>fix page show http 500 default page in iis when checker has error</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
