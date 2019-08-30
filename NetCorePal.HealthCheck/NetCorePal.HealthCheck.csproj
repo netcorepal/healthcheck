@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>netcorepal</Company>
     <Authors>netcorepal</Authors>
-    <PackageReleaseNotes>empty string use default value in provider name of connection string</PackageReleaseNotes>
+    <PackageReleaseNotes>improve: use Task.FromResult instead of Task.Factory.StartNew in HealthChecker.CheckAsync</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/netcorepal/healthcheck</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/netcorepal/healthcheck.git</RepositoryUrl>

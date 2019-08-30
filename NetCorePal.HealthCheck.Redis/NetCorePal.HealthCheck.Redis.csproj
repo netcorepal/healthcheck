@@ -10,6 +10,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>netcorepal healthcheck redis stackexchange</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>fix:Redis PackageReference Version</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StackExchange.Redis" Version="1.2.0" />
@@ -20,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="StackExchange.Redis" Version="2.0.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.495" />
   </ItemGroup>
 
   <ItemGroup>
