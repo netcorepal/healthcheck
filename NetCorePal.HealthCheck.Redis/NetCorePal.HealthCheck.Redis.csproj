@@ -10,7 +10,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>netcorepal healthcheck redis stackexchange</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>fix:Redis PackageReference Version</PackageReleaseNotes>
+    <PackageReleaseNotes>improve: reuse IDatabase</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StackExchange.Redis" Version="1.2.0" />
