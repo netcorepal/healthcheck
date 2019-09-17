@@ -61,6 +61,12 @@ namespace NetCorePal.HealthCheck
 
         public void ProcessRequest(HttpContext context)
         {
+            if ("HEAD".Equals(context.Request.HttpMethod, System.StringComparison.OrdinalIgnoreCase) || "HEAD".Equals(context.Request.QueryString["method"], System.StringComparison.OrdinalIgnoreCase))
+            {
+                context.Response.Flush();
+                return;
+            }
+
             bool badVisitor = false;
             if (apiKey != null)
             {
@@ -83,16 +89,8 @@ namespace NetCorePal.HealthCheck
                 return;
             }
 
-            HealthCheckResult[] r;
-            if ("HEAD".Equals(context.Request.HttpMethod, System.StringComparison.OrdinalIgnoreCase))
-            {
-                context.Response.Flush();
-                return;
-            }
-            else
-            {
-                r = HealthCheckerManager.Manager.CheckAllAsync().Result;
-            }
+            HealthCheckResult[] r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+
 
             var html = r.ToHtml();
             if (r.Any(p => !p.IsHealthy))
