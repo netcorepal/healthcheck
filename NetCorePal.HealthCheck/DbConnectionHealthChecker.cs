@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Threading.Tasks;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
+using System.Threading.Tasks;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
@@ -32,15 +32,16 @@ namespace NetCorePal.HealthCheck
         }
 
 
-#if NET45
+#if Framework
         /// <summary>
         /// DbConnectionHealthChecker
         /// </summary>
         /// <param name="name">Checker name</param>
         /// <param name="provider">providerName，web.config system.data section DbProviderFactories invariant value</param>
         /// <param name="connectionString">连接字符串</param>
-        public DbConnectionHealthChecker(string name, string provider, string connectionString) : this(name, DbProviderFactories.GetFactory(provider), connectionString)
+        public DbConnectionHealthChecker(string name, string provider, string connectionString) : this(name, DbProviderFactories.GetFactory(string.IsNullOrWhiteSpace(provider) ? "MySql.Data.MySqlClient" : provider), connectionString)
         {
+            //  FBI WARNING: provider need a defaut driver            
         }
 #endif
 

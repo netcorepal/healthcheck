@@ -1,11 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.12" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetCorePal.HealthCheck.AspNetCore\NetCorePal.HealthCheck.AspNetCore.csproj" />
+    <ProjectReference Include="..\NetCorePal.HealthCheck.Redis\NetCorePal.HealthCheck.Redis.csproj" />
   </ItemGroup>
 
 </Project>

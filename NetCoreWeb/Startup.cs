@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using NetCorePal.HealthCheck;
+using System.Threading;
 namespace NetCoreWeb
 {
     public class Startup
@@ -37,6 +39,20 @@ namespace NetCoreWeb
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseHealthCheck();
+            //HealthCheckerManager.Manager.Add("aaa", () =>
+            //{
+            //    System.Threading.Thread.Sleep(2000);
+            //    return new HealthCheckResult()
+            //    {
+            //        IsHealthy = true,
+            //        Message = "slow",
+            //        Name = "aaa"
+            //    };
+            //});
+            //HealthCheckerManager.Manager.AddHttpHealthChecker("baidu", "https://www.baidu.com");
+            //HealthCheckerManager.Manager.SetLogger(app.ApplicationServices.GetService<ILogger<HealthCheckerManager>>());
+            HealthCheckerManager.Manager.AddRedisHealthChecker("Redis","localhost");
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -45,6 +61,8 @@ namespace NetCoreWeb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            ThreadPool.SetMinThreads(100, 100);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace NetCorePal.HealthCheck
         /// <returns></returns>
         public virtual async Task<HealthCheckResult> CheckAsync()
         {
-            return await Task.Factory.StartNew(Check).ConfigureAwait(false);
+            return await Task.FromResult(Check()).ConfigureAwait(false);
         }
 
         /// <summary>

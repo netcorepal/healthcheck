@@ -9,8 +9,9 @@ namespace NetCorePal.HealthCheck.Redis
     {
 
         ConnectionMultiplexer connection = null;
+        IDatabase database = null;
         readonly string connectionString;
-
+        bool inited; //表示connection、database是否成功初始化
         /// <summary>
         /// RedisHealthChecker
         /// </summary>
@@ -20,7 +21,7 @@ namespace NetCorePal.HealthCheck.Redis
         {
             this.Name = name;
             this.connectionString = connectionString;
-            
+
         }
         /// <summary>
         /// 
@@ -28,11 +29,18 @@ namespace NetCorePal.HealthCheck.Redis
         /// <returns></returns>
         protected override HealthCheckResult Check()
         {
-            var connection = this.connection ?? ConnectionMultiplexer.Connect(connectionString);
+            if (!inited)
+            {
+                lock (this)
+                {
+                    //使用空判断避免并发重复进入而重复执行创建连接的操作
+                    this.connection = this.connection ?? ConnectionMultiplexer.Connect(connectionString);
+                    this.database = this.database ?? connection.GetDatabase();
+                    inited = true;
+                }
+            }
             string key = "healthcheck-" + Guid.NewGuid().ToString("N");
             string value = Guid.NewGuid().ToString("N");
-
-            var database = connection.GetDatabase();
             if (!database.StringSet(key, value, TimeSpan.FromMinutes(1)))
             {
                 throw new Exception("Redis随机写入失败");

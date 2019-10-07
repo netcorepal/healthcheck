@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+#if NET45
+#else
+using Microsoft.Extensions.Logging;
+#endif
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
@@ -13,7 +17,7 @@ namespace NetCorePal.HealthCheck
     /// </summary>
     public static class HealthCheckerManagerExtenstions
     {
-#if NET45
+#if Framework
         /// <summary>
         /// using web.config  or app.config connectionStrings for checker
         /// </summary>
@@ -30,6 +34,19 @@ namespace NetCorePal.HealthCheck
                 }
                 manager.Add(new DbConnectionHealthChecker(con.Name, con.ProviderName, con.ConnectionString));
             }
+        }
+#endif
+
+#if NET45
+#else
+        /// <summary>
+        /// 设置日志记录器
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="logger"></param>
+        public static void SetLogger(this HealthCheckerManager manager, ILogger<HealthCheckerManager> logger)
+        {
+            manager.Logger = logger;
         }
 #endif
         /// <summary>
@@ -85,6 +102,17 @@ namespace NetCorePal.HealthCheck
         public static void AddHttpHealthChecker(this HealthCheckerManager manager, string name, string url)
         {
             manager.Add(new HttpHealthChecker(name, url));
+        }
+
+        /// <summary>
+        /// add <see cref="HttpHeadHealthChecker"/>  
+        /// </summary>
+        /// <param name="manager">instance of HealthCheckerManager</param>
+        /// <param name="name">checker name</param>
+        /// <param name="url">http url to check</param>
+        public static void AddHttpHeadHealthChecker(this HealthCheckerManager manager, string name, string url)
+        {
+            manager.Add(new HttpHeadHealthChecker(name, url));
         }
     }
 }

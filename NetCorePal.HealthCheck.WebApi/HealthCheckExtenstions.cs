@@ -64,6 +64,11 @@ namespace NetCorePal.HealthCheck
             protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
                 HttpResponseMessage responseMessage = new HttpResponseMessage();
+                if ("HEAD".Equals(request.Method.Method, StringComparison.OrdinalIgnoreCase) || "HEAD".Equals(request.GetQueryString("method"), StringComparison.OrdinalIgnoreCase))
+                {
+                    responseMessage.StatusCode = System.Net.HttpStatusCode.OK;
+                    return Task.FromResult(responseMessage);
+                }
                 bool badVisitor = false;
                 if (apiKey != null)
                 {
@@ -86,7 +91,8 @@ namespace NetCorePal.HealthCheck
                 }
                 else
                 {
-                    var r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+
+                    HealthCheckResult[] r = HealthCheckerManager.Manager.CheckAllAsync().Result;
                     var html = r.ToHtml();
                     if (r.Any(p => !p.IsHealthy))
                     {

@@ -1,6 +1,6 @@
-﻿using System.Web;
+﻿using System.Linq;
+using System.Web;
 using System.Web.Routing;
-using System.Linq;
 namespace NetCorePal.HealthCheck
 {
     /// <summary>
@@ -61,6 +61,12 @@ namespace NetCorePal.HealthCheck
 
         public void ProcessRequest(HttpContext context)
         {
+            if ("HEAD".Equals(context.Request.HttpMethod, System.StringComparison.OrdinalIgnoreCase) || "HEAD".Equals(context.Request.QueryString["method"], System.StringComparison.OrdinalIgnoreCase))
+            {
+                context.Response.Flush();
+                return;
+            }
+
             bool badVisitor = false;
             if (apiKey != null)
             {
@@ -83,13 +89,15 @@ namespace NetCorePal.HealthCheck
                 return;
             }
 
+            HealthCheckResult[] r = HealthCheckerManager.Manager.CheckAllAsync().Result;
 
-            var r = HealthCheckerManager.Manager.CheckAllAsync().Result;
+
             var html = r.ToHtml();
             if (r.Any(p => !p.IsHealthy))
             {
                 context.Response.StatusCode = 500;
             }
+            context.Response.TrySkipIisCustomErrors = true;
             context.Response.Write(html);
         }
     }

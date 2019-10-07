@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\build\version.props"></Import>
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks>net45;net462</TargetFrameworks>
     <RootNamespace>NetCorePal.HealthCheck</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>netcorepal</Authors>
@@ -12,20 +13,9 @@
     <PackageTags>netcorepal healthcheck asp.net mvc</PackageTags>
     <Description>Health check result output for web project .NET Framework 4.5+.
 For ASP.NET Core ,please user NetCorePal.HealthCheck.AspNetCore.</Description>
-    <Version>1.1.1</Version>
-    <PackageReleaseNotes>Use HTTP 401 instead HTTP 404 when apiKey was wrong</PackageReleaseNotes>
+    <PackageReleaseNotes>fix page show http 500 default page in iis when checker has error</PackageReleaseNotes>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net45\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net45\NetCorePal.HealthCheck.Web.xml</DocumentationFile>
-  </PropertyGroup>
-
-  
-  
   <ItemGroup>
     <ProjectReference Include="..\NetCorePal.HealthCheck\NetCorePal.HealthCheck.csproj" />
   </ItemGroup>

@@ -25,6 +25,10 @@ namespace NetCorePal.HealthCheck
             {
                 p.Run(async context =>
                 {
+                    if (HttpMethods.Head.Equals(context.Request.Method, StringComparison.OrdinalIgnoreCase) || HttpMethods.Head.Equals(context.Request.Query["method"], StringComparison.OrdinalIgnoreCase))
+                    {
+                        return;
+                    }
                     bool badVisitor = false;
                     if (apiKey != null)
                     {
@@ -47,8 +51,8 @@ namespace NetCorePal.HealthCheck
                         context.Response.StatusCode = 401;
                         return;
                     }
-
-                    var r = await HealthCheckerManager.Manager.CheckAllAsync();
+                     
+                    HealthCheckResult[] r = await HealthCheckerManager.Manager.CheckAllAsync();
                     if (r.Any(c => !c.IsHealthy))
                     {
                         context.Response.StatusCode = 500;
