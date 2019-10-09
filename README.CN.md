@@ -118,10 +118,16 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ```
 
 浏览器中输入网址：
+```
 http://你的基础路径/healthcheck?apikey=密钥
+```
 
 curl：
+```
 curl http://你的基础路径/healthcheck?apikey=密钥
+```
 
 head方法检查（head请求不需要密钥）
+```
 curl --head http://你的基础路径/healthcheck
+```
